@@ -15,7 +15,7 @@ def sparsity(matrix, min_value=0):
 
 
 def heatmap(matrix):
-    row, col, data = matrix.row_col_data()
+    row, col, data = matrix.row_col_data
     histogram, xedges, yedges = np.histogram2d(col, row, bins=50, normed=True, weights=data)
     extent = [xedges[0], xedges[-1], yedges[0], yedges[-1]]
     plt.imshow(histogram, extent=extent)
@@ -23,13 +23,13 @@ def heatmap(matrix):
 
 
 def hexbin(matrix):
-    row, col, data = matrix.row_col_data()
+    row, col, data = matrix.row_col_data
     plt.hexbin(col, row, vmin=0)
     plt.show()
 
 
 def pcolormesh(matrix):
-    row, col, data = matrix.row_col_data()
+    row, col, data = matrix.row_col_data
     histogram, xedges, yedges = np.histogram2d(col, row, bins=50, normed=True, weights=data)
     plt.pcolormesh(histogram)
     plt.show()
